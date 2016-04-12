@@ -4,6 +4,7 @@
         <title>Sample HTML5 File</title>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="public/img/favicon.ico">
         <script type="text/javascript" charset="utf-8">
             function pageLoaded() 
             {
@@ -38,6 +39,11 @@
             
             function complexPath()
             {
+                // Get a handle to the canvas object
+                var canvas = document.getElementById('testcanvas');
+
+                // Get the 2d context for this canvas 
+                var context = canvas.getContext('2d');
                 // Drawing complex shapes
                 // filled triangles
                 context.beginPath();
@@ -77,15 +83,10 @@
                 context.stroke();
                 
             }
-            
-            function myCatIsCute()
-            {
-                console.log('Thsi is not uploading on github');
-            }
-            
+                       
         </script>
     </head>
-    <body onload="pageLoaded();">
+    <body onload="complexPath();">
         <canvas width="640" height="480" id="testcanvas" style="border:1px solid black;">
             Your browser does not support HTML5 Canvas. Please shift to another browser
             
