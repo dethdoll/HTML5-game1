@@ -83,10 +83,31 @@
                 context.stroke();
                 
             }
-                       
+                      
+            function drawingText()
+            {
+                // Get a handle to the canvas object
+                var canvas = document.getElementById('testcanvas');
+
+                // Get the 2d context for this canvas 
+                var context = canvas.getContext('2d');
+                
+                //drawing text
+                context.fillText('This is some text...', 330, 40);
+                
+                
+                // modifying the font
+                context.font = '10 pt Arial';
+                context.fillText('This is in 10 pt Arial...', 360, 60);
+                
+                // drawing stroked text
+                context.font = '16 pt Arial';
+                context.strokeText('This is the stroke in 16 pt Arial...', 330, 80);
+                
+            }
         </script>
     </head>
-    <body onload="complexPath();">
+    <body onload="drawingText();">
         <canvas width="640" height="480" id="testcanvas" style="border:1px solid black;">
             Your browser does not support HTML5 Canvas. Please shift to another browser
             
