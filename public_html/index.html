@@ -105,9 +105,39 @@
                 context.strokeText('This is the stroke in 16 pt Arial...', 330, 80);
                 
             }
+            
+            function drawingStyles()
+            {
+                // Get a handle to the canvas object
+                var canvas = document.getElementById('testcanvas');
+
+                // Get the 2d context for this canvas 
+                var context = canvas.getContext('2d');
+                
+                //set fill color to red
+                context.fillStyle = 'red';
+                // draw a red filled triangle
+                context.fillRect(310, 160, 100, 50);
+                
+                // set stroke color to green
+                context.strokeStyle = 'green';
+                // Draw a green stroked rectangle
+                context.strokeRect(310, 240, 100, 50);
+                
+                // set fill color using rgb()
+                context.fillStyle = 'rgb(255,0,0)';
+                // draw a red filled rectangle
+                context.fillRect(420, 160, 100, 50);
+                
+                // set fill color to green with an alpha of 0.5
+                context.fillStyle = 'rgba(0, 255, 0, 0.5)';
+                // draw a semi transparent green filled rectangle
+                context.fillRect(450, 180, 100, 50);
+                
+            }
         </script>
     </head>
-    <body onload="drawingText();">
+    <body onload="drawingStyles();">
         <canvas width="640" height="480" id="testcanvas" style="border:1px solid black;">
             Your browser does not support HTML5 Canvas. Please shift to another browser
             
