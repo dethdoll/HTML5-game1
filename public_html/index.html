@@ -135,10 +135,49 @@
                 context.fillRect(450, 180, 100, 50);
                 
             }
+            
+            function drawingImages()
+            {
+                // Get a handle to the canvas object
+                var canvas = document.getElementById('testcanvas');
+
+                // Get the 2d context for this canvas 
+                var context = canvas.getContext('2d');
+                
+                // Get a handle to the image object
+                var image = document.getElementById('spaceship');
+                
+                // draw the image at (0, 350)
+                context.drawImage(image, 0, 350);
+                
+                // scaling the image to half the original size
+                //context.drawImage(image, 0, 400, 100, 25);
+                
+                // Drawing part of the image
+                //context.drawImage(image, 0, 0 , 60, 50, 0, 420, 60, 50);
+                
+            }   
+            
+            function transformRotate()
+            {
+                // Get a handle to the canvas object
+                var canvas = document.getElementById('testcanvas');
+                // Get the 2d context for this canvas 
+                var context = canvas.getContext('2d');
+                // Get a handle to the image object
+                var image = document.getElementById('spaceship');
+                
+                // Translate origin to location of object
+                context.translate(250, 370);
+                //rotate about the new origin by 60 degrees
+                context.rotate(Math.PI/3);
+                context.drawImage(image, )
+            }
         </script>
     </head>
-    <body onload="drawingStyles();">
-        <canvas width="640" height="480" id="testcanvas" style="border:1px solid black;">
+    <body onload="drawingImages();">
+        <canvas width="640" height="600" id="testcanvas" style="border:1px solid black;">
+            <img src="public/img/spaceship.jpg" id="spaceship">
             Your browser does not support HTML5 Canvas. Please shift to another browser
             
             
