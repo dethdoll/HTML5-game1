@@ -171,11 +171,26 @@
                 context.translate(250, 370);
                 //rotate about the new origin by 60 degrees
                 context.rotate(Math.PI/3);
-                context.drawImage(image, )
+                context.drawImage(image,0,0,95,70,-30,-25,60,50);
+                //Restore to original state by rotating and translating back
+                context.rotate(-Math.PI/3);
+                context.translate(-240,-370);
+                
+                // Translate origin to location of object
+                context.translate(300,370);
+                // Rotate about the new origin
+                context.rotate(3*Math.PI/4);
+                context.drawImage(image, 0,0,95,70,-30,-25,60,50);
+                
+                //restore to originla state by rotating and translating back
+                context.rotate(-3*Math.PI/4);
+                context.translate(-300, -370);
+                
+                
             }
         </script>
     </head>
-    <body onload="drawingImages();">
+    <body onload="transformRotate();">
         <canvas width="640" height="600" id="testcanvas" style="border:1px solid black;">
             <img src="public/img/spaceship.jpg" id="spaceship">
             Your browser does not support HTML5 Canvas. Please shift to another browser
