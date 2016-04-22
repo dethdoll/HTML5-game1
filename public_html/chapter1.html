@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sample HTML5 File</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="public/img/favicon.ico">
+        <script type="text/javascript" charset="utf-8">
+            function pageLoaded() 
+            {
+                // Get a handle to the canvas object
+               var canvas = document.getElementById('testcanvas');
+
+               // Get the 2d context for this canvas 
+               var context = canvas.getContext('2d');
+
+               // Our drawing code here...     
+               // Filled rectangles
+               // Draw a solid square with width and height of 100px at (200, 10)
+               context.fillRect(200, 10, 100, 100);
+               
+               // Dra a solid square with width of 90px and height of 30px  at (50, 70)
+               context.fillRect(50, 70, 90, 30);
+               
+               // Stroke rectangles
+               // Draw a rectangular outline of widht and height of 50px at (110, 10)
+               context.strokeRect(110, 10, 50, 50);
+               
+               // Draw a rectangular outline of widht and height of 50px at (30, 10)
+               context.strokeRect(30, 10, 50, 50);
+               
+               // Clearing rectangles
+               //Clear a rectangle of width of 30px and height 20px at (210, 20)
+               context.clearRect(210, 20, 30, 20);
+               
+               // Clear rectangle of width 30px and height 20px at (260, 20)
+               context.clearRect(260, 20, 30, 20);
+            }
+            
+            function complexPath()
+            {
+                // Get a handle to the canvas object
+                var canvas = document.getElementById('testcanvas');
+
+                // Get the 2d context for this canvas 
+                var context = canvas.getContext('2d');
+                // Drawing complex shapes
+                // filled triangles
+                context.beginPath();
+                context.moveTo(10, 120);
+                context.lineTo(10, 180);
+                context.lineTo(110, 150);
+                context.fill(); // close the shape and fill it out
+                
+                // stroked Triangle
+                context.beginPath();
+                context.moveTo(160, 160);
+                context.lineTo(170, 220);
+                context.lineTo(240, 210);
+                context.lineTo(260, 170);
+                context.lineTo(190, 140);
+                context.closePath();
+                context.stroke();
+                
+                // drawing arcs
+                
+                // drawing a semi-circle
+                context.beginPath();
+                //draw an arc at (400, 50) with radius 40 from 0 to 180 degrees clockwise
+                context.arc(100, 300, 40, 0, Math.PI, true); // (PI radians  = 180 degrees)
+                context.stroke();
+                
+                // drawing a full circle
+                context.beginPath();
+                // draw an arc at (500, 50) with radius 30 from 0 to 360 degrees anticlockwise
+                context.arc(100, 300, 30, 0, 2*Math.PI, true);
+                context.fill();
+                
+                // drawing a three quarter arc 
+                context.beginPath();
+                //draw and arc at (400, 100) with radius 25 from 0 to 270 degrees, clockwise
+                context.arc(200, 300, 25, 0, 3/2*Math.PI, false);
+                context.stroke();
+                
+            }
+                      
+            function drawingText()
+            {
+                // Get a handle to the canvas object
+                var canvas = document.getElementById('testcanvas');
+
+                // Get the 2d context for this canvas 
+                var context = canvas.getContext('2d');
+                
+                //drawing text
+                context.fillText('This is some text...', 330, 40);
+                
+                
+                // modifying the font
+                context.font = '10 pt Arial';
+                context.fillText('This is in 10 pt Arial...', 360, 60);
+                
+                // drawing stroked text
+                context.font = '16 pt Arial';
+                context.strokeText('This is the stroke in 16 pt Arial...', 330, 80);
+                
+            }
+            
+            function drawingStyles()
+            {
+                // Get a handle to the canvas object
+                var canvas = document.getElementById('testcanvas');
+
+                // Get the 2d context for this canvas 
+                var context = canvas.getContext('2d');
+                
+                //set fill color to red
+                context.fillStyle = 'red';
+                // draw a red filled triangle
+                context.fillRect(310, 160, 100, 50);
+                
+                // set stroke color to green
+                context.strokeStyle = 'green';
+                // Draw a green stroked rectangle
+                context.strokeRect(310, 240, 100, 50);
+                
+                // set fill color using rgb()
+                context.fillStyle = 'rgb(255,0,0)';
+                // draw a red filled rectangle
+                context.fillRect(420, 160, 100, 50);
+                
+                // set fill color to green with an alpha of 0.5
+                context.fillStyle = 'rgba(0, 255, 0, 0.5)';
+                // draw a semi transparent green filled rectangle
+                context.fillRect(450, 180, 100, 50);
+                
+            }
+            
+            function drawingImages()
+            {
+                // Get a handle to the canvas object
+                var canvas = document.getElementById('testcanvas');
+
+                // Get the 2d context for this canvas 
+                var context = canvas.getContext('2d');
+                
+                // Get a handle to the image object
+                var image = document.getElementById('spaceship');
+                
+                // draw the image at (0, 350)
+                context.drawImage(image, 0, 350);
+                
+                // scaling the image to half the original size
+                //context.drawImage(image, 0, 400, 100, 25);
+                
+                // Drawing part of the image
+                //context.drawImage(image, 0, 0 , 60, 50, 0, 420, 60, 50);
+                
+            }   
+            
+            function transformRotate()
+            {
+                // Get a handle to the canvas object
+                var canvas = document.getElementById('testcanvas');
+                // Get the 2d context for this canvas 
+                var context = canvas.getContext('2d');
+                // Get a handle to the image object
+                var image = document.getElementById('spaceship');
+                
+                // Translate origin to location of object
+                context.translate(250, 370);
+                //rotate about the new origin by 60 degrees
+                context.rotate(Math.PI/3);
+                context.drawImage(image,0,0,95,70,-30,-25,60,50);
+                //Restore to original state by rotating and translating back
+                context.rotate(-Math.PI/3);
+                context.translate(-240,-370);
+                
+                // Translate origin to location of object
+                context.translate(300,370);
+                // Rotate about the new origin
+                context.rotate(3*Math.PI/4);
+                context.drawImage(image, 0,0,95,70,-30,-25,60,50);
+                
+                //restore to originla state by rotating and translating back
+                context.rotate(-3*Math.PI/4);
+                context.translate(-300, -370);
+                
+                
+            }
+        </script>
+    </head>
+    <body onload="transformRotate();">
+        <canvas width="640" height="600" id="testcanvas" style="border:1px solid black;">
+            <img src="public/img/spaceship.jpg" id="spaceship">
+            Your browser does not support HTML5 Canvas. Please shift to another browser
+            
+            
+        </canvas>
+    </body>
+</html>
