@@ -1,49 +1,51 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <meta http-equiv="Content-type" content="text/html charset=utf-8">
         <title>Chapter2 Building the first game</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="public/js/game.js" type="text/javascript" charset="utf-8"></script>
-        <link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="public/css/style.css" type="text/css" media="screen" charset="utf-8">
+        <link rel="icon" href="public/img/favicon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+    
     <body>
         <div id="gamecontainer">
             <canvas id="gamecanvas" width="640" height="480" class="gamelayer">
-                <div id="scorescreen" class="gamelayer">
-                    <img id="togglemusic" src="images/icons/sound.png">
-                    <img src="images/icons/prev.png">
-                    <span id="score">Score: 0</span>
-                    
-                </div>
-                <div id="gamestartscreen" class="gamelayer">
-                    <img src="imgaes/icons/play.png" alt="Play Game"><br>
-                    <img src="images/icons/settings.png" alt="Settings">
-                </div>
-                <div id="levelselectscreen" class="gamelayer">
-                    
-                </div>
-                <div id="loadingscreen" class="gamelayer">
-                    <div id="loadingmessage"></div>
-                </div>
-                <div id="endingscreen" class="gamelayer">
-                    <div>
-                        <p id="endingmessage">The level is over message</p>
-                        <p id="playcurrentlevel">
-                            <img src="images/icons/prev.png">Play current level</p>
-                        <p id="playnextlevel">
-                            <img src="images/icons/next.png">Play next level</p>
-                        <p id="showlevelscreen">
-                            <img src="images/icons/return.png">Return level screen</p>
-                    </div>
-                </div>
+            
             </canvas>
+            
+            <div id="scorescreen" class="gamelayer">
+                <img id="togglemusic" src="public/img/icons/sound.png">
+                <img src="public/img/icons/prev.png">
+                <span id="score">Score: 0</span>
+
+            </div>
+            <div id="gamestartscreen" class="gamelayer">
+                <img src="public/img/icons/play.png" height="55" width="133" alt="Play Game" onclick = "game.showLevelScreen();"><br>
+                <img src="public/img/icons/settings.png" alt="Settings">	
+            </div>
+
+            <div id="levelselectscreen" class="gamelayer">
+
+            </div>
+            <div id="loadingscreen" class="gamelayer">
+                <div id="loadingmessage"></div>
+            </div>
+            <div id="endingscreen" class="gamelayer">
+                <div>
+                    <p id="endingmessage">The level is over message</p>
+                    <p id="playcurrentlevel">
+                        <img src="public/img/icons/prev.png">Play current level</p>
+                    <p id="playnextlevel">
+                        <img src="public/img/icons/next.png">Play next level</p>
+                    <p id="showlevelscreen">
+                        <img src="public/img/icons/return.png">Return level screen</p>
+                </div>
+            </div>
+
         </div>
     </body>
 </html>
