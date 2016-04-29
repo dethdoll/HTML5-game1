@@ -52,3 +52,25 @@
     background: url(../img/loader.gif) no-repeat center;
     font: 12px arial;
 }
+
+/* score screen */
+#scorescreen {
+    height: 60px;
+    font: 32px comic sans MS;
+    text-shadow: 0 0 2px #000;
+    color:#FFF;
+}
+
+#scorescreen img {
+    opacity: 0.6;
+    top: 10px;
+    position:relative;
+    padding-left: 10px;
+    cursor:pointer;
+}
+
+#scorescreen #score {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
